@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MK3D - Cotizador Profesional</title>
+    <title>MK3D - Servicio de Impresión</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
@@ -32,12 +32,17 @@
     </nav>
 
     <main class="max-w-5xl mx-auto">
+        <header class="text-center mb-12">
+            <h1 class="font-armstrong text-4xl md:text-5xl mb-4">Servicio de Impresión</h1>
+            <p class="text-cyan-400 uppercase tracking-widest text-xs font-bold">Materiales & Calidades Técnicas</p>
+        </header>
+
         <div class="grid md:grid-cols-2 gap-6 mb-8">
             <div class="neon-card p-6 rounded-2xl">
                 <h3 class="font-armstrong text-xs text-cyan-400 mb-3 tracking-widest">Estándares de Resolución</h3>
                 <div class="space-y-3 text-[11px]">
-                    <p><strong class="text-white">Normal (0.28 - 0.20mm):</strong> Equilibrio perfecto entre velocidad y resistencia. Ideal para piezas mecánicas y prototipos funcionales.</p>
-                    <p><strong class="text-white">Máxima (0.12 - 0.04mm):</strong> Acabado superficial superior, casi sin líneas de capa visibles. Recomendado para maquetas y modelos estéticos.</p>
+                    <p><strong class="text-white">Normal (0.28 - 0.20mm):</strong> Equilibrio perfecto entre velocidad y resistencia. Ideal para piezas mecánicas y prototipos funcionales [cite: 2026-02-07].</p>
+                    <p><strong class="text-white">Máxima (0.12 - 0.04mm):</strong> Acabado superficial superior, casi sin líneas de capa visibles. Recomendado para maquetas y modelos estéticos [cite: 2026-02-07].</p>
                 </div>
             </div>
             <div class="neon-card p-6 rounded-2xl">
@@ -45,15 +50,16 @@
                 <div class="grid grid-cols-2 gap-4 text-[10px]">
                     <div>
                         <p class="text-white font-bold">PLA+ / PETG</p>
-                        <p class="text-gray-500">Versátiles y resistentes. El PETG destaca por su resistencia química y a rayos UV.</p>
+                        <p class="text-gray-500">Versátiles y resistentes. El PETG destaca por su resistencia química y a rayos UV [cite: 2026-02-07].</p>
                     </div>
                     <div>
                         <p class="text-white font-bold">ABS / NYLON 6</p>
-                        <p class="text-gray-500">Uso industrial. ABS para alto impacto; Nylon 6 para engranajes y piezas de fricción.</p>
+                        <p class="text-gray-500">Uso industrial. ABS para alto impacto; Nylon 6 para engranajes y piezas de fricción [cite: 2026-02-07].</p>
                     </div>
                 </div>
             </div>
         </div>
+
         <section class="bg-[#0a0a0a] border border-white/10 rounded-3xl p-6 md:p-10 shadow-2xl">
             <div class="grid md:grid-cols-2 gap-6 mb-8">
                 <div>
@@ -107,7 +113,7 @@
             const weight = parseFloat(document.getElementById('weight').value) || 0;
             const time = parseFloat(document.getElementById('time').value) || 0;
 
-            // VALORES CALIBRADOS SEGÚN TUS 30 PUNTOS DE DATOS 
+            [cite_start]// VALORES CALIBRADOS SEGÚN TUS 30 PUNTOS DE DATOS [cite: 1]
             const BASE_FEE = 1466.67;
             const HOUR_RATE = 486.20;
             const MARKUP = 4.488;
