@@ -42,11 +42,8 @@
             text-shadow: 0 0 5px #fff, 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue);
         }
 
-        .hero-bg {
-            background: linear-gradient(rgba(18, 33, 55, 0.75), rgba(0, 0, 0, 0.9)), 
-                        url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=1500');
-            background-size: cover;
-            background-position: center;
+        /* Hero sin imagen de fondo (la pasamos al HTML para capas) */
+        .hero-bg-container {
             height: 100vh;
             display: flex;
             flex-direction: column;
@@ -70,21 +67,27 @@
             text-shadow: 0 0 8px rgba(0, 242, 255, 0.6), 0 0 15px rgba(0, 242, 255, 0.3);
         }
 
-        /* ESTILO AGREGADO: MARCA DE AGUA */
+        /* MARCA DE AGUA (Capa intermedia Z-5) */
         .watermark {
             position: fixed;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
             width: 70vw;
-            opacity: 0.2;
+            opacity: 0.12;
             pointer-events: none;
-            z-index: 1;
+            z-index: 5;
             filter: grayscale(100%) brightness(200%);
         }
     </style>
 </head>
 <body>
+
+    <div class="fixed inset-0 w-full h-full -z-10">
+        <div class="absolute inset-0 bg-gradient-to-b from-[rgba(18,33,55,0.75)] to-[rgba(0,0,0,0.9)] z-10"></div>
+        <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=1500" 
+             class="w-full h-full object-cover" alt="Fondo">
+    </div>
 
     <img src="logo.png" class="watermark" alt="">
 
@@ -112,7 +115,7 @@
         </div>
     </nav>
 
-    <section class="hero-bg relative z-10 text-center px-6 pt-20">
+    <section class="hero-bg-container relative z-10 text-center px-6 pt-20">
         <div class="max-w-5xl mx-auto">
             <h1 class="font-armstrong text-5xl md:text-7xl lg:text-8xl leading-[0.85] mb-6">
                 <span class="text-white-fade block">Tu idea</span>
